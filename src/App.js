@@ -45,8 +45,8 @@ function App() {
           <Uranus />
           <Neptune />
           <Pluto />
-        </Suspense>
         <ZoomIn positions={positions} stage={stage} />
+        </Suspense>
       </Canvas>
       <Loader />
       <div className="app">
