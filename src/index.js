@@ -7,7 +7,6 @@ import { Provider } from "react-redux";
 import { applyMiddleware, compose, createStore } from "redux";
 import appReducer from "./reducers/appReducer.js";
 import thunk from "redux-thunk";
-import { composeWithDevTools } from "redux-devtools-extension";
 
 const initialState = {
   stage: 'Intro',
@@ -21,11 +20,23 @@ const initialState = {
   trips: [],
 };
 
-const store = createStore(
-  appReducer,
-  initialState,
-  compose(applyMiddleware(thunk), composeWithDevTools())
+const composeEnhancers =
+  typeof window === "object" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+      })
+    : compose;
+
+const enhancer = composeEnhancers(
+  applyMiddleware(thunk)
 );
+
+const store = createStore(appReducer, initialState, enhancer);
+
+// const store = createStore(
+//   appReducer,
+//   initialState,
+//   compose(applyMiddleware(thunk), composeWithDevTools())
+// );
 
 ReactDOM.render(
   <Router>
