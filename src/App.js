@@ -54,8 +54,8 @@ function App() {
           <Route exact path="/wherever">
             <Greeting />
           </Route>
-          <Route path="/signup">
-            <UserForm serve="Sign Up" />
+          <Route path="/signin">
+            <UserForm serve="Sign In" />
           </Route>
           <Route path="/trips">
             <TripsContainer />

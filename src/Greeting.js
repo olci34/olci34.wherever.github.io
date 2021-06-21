@@ -7,9 +7,9 @@ export default function Greeting() {
       <h1 id='welcome-header'>Welcome to Wherever Space Cruise</h1>
       <p>Wherever you are in Solar System and</p>
       <p>wherever you want to go to in Solar System</p>
-      <UserForm serve="Sign In" />
+      <UserForm serve="Sign Up" />
       <br/>
-      <Link to="/signup">Sign Up</Link>
+      <Link to="/signin">Sign In</Link>
     </div>
   );
 }
