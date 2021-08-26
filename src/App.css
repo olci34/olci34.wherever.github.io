@@ -114,3 +114,7 @@ p {
     opacity: 1;
     transition: opacity 3s ease;
 }
+
+.greeting-option {
+    display: block;
+}
