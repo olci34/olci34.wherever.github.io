@@ -1,12 +1,9 @@
 import React, {Component} from 'react'
 import { withRouter } from 'react-router'
-import UserForm from './UserForm'
-
 
 class GreetingOptions extends Component {
 
     handleClick = (e) => this.props.history.push(`/${e.target.id}`)
-    
     
     render() {
         return (

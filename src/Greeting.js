@@ -1,5 +1,3 @@
-import UserForm from "./users/UserForm";
-import { Link } from "react-router-dom";
 import GreetingOptions from "./users/GreetingOptions";
 
 export default function Greeting() {

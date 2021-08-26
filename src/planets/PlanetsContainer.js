@@ -7,14 +7,22 @@ import { Route, Switch } from "react-router";
 import Planet from "./Planet";
 
 class PlanetsContainer extends Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {signedIn: false}
+  }
   componentDidMount() {
+    if (localStorage.getItem('userId')){
+      this.setState({signedIn: true})
+    }
     this.props.fetchPlanets();
   }
 
   render() {
     return (
       <>
-        <NavBar />
+        <NavBar signedIn={this.state.signedIn} />
         <Switch>
           <Route exact path="/planets">
             <Planets />

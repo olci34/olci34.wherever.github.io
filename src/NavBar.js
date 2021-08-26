@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
-export default function NavBar() {
+export default function NavBar(props) {
   const dispatch = useDispatch();
 
   const handleLogOut = (e) => {
@@ -17,7 +17,8 @@ export default function NavBar() {
     });
   };
 
-  return (
+  if (props.signedIn) {
+    return (
     <div id="navbar">
       <Link to="/planets">Planets</Link>
       <Link to="/trips">Trips</Link>
@@ -26,4 +27,12 @@ export default function NavBar() {
       </Link>
     </div>
   );
+  } else {
+    return (
+      <div id='navbar'>
+        <Link to="/wherever">Home</Link>
+      </div>
+    )
+  }
+  
 }

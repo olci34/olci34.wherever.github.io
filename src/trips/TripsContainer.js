@@ -15,10 +15,9 @@ class TripsContainer extends Component {
   render() {
     return (
       <>
-        <NavBar />
+        <NavBar signedIn={true} />
         <Switch>
           <Route path="/trips/new">
-            {" "}
             {/*  /trips/new path has to be above /trips/:id otherwise it takes us to /trips/:id always */}
             <TripForm />
           </Route>
