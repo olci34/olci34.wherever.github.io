@@ -9,8 +9,6 @@ export default function Greeting() {
       <p>Wherever you are in Solar System and</p>
       <p>wherever you want to go to in Solar System</p>
       <GreetingOptions/>
-      <br/>
-      <Link to="/signin">Sign In</Link>
     </div>
   );
 }

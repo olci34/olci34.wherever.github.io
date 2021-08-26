@@ -55,9 +55,11 @@ function App() {
             <Greeting />
           </Route>
           <Route path="/signup">
+            <Greeting />
             <UserForm serve="Sign Up" />
           </Route>
           <Route path="/signin">
+            <Greeting/>
             <UserForm serve="Sign In" />
           </Route>
           <Route path="/trips">
