@@ -20,7 +20,7 @@ class UserForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     if (this.props.serve === "Sign In") {
-      this.props.signIn(this.state); // ASK HOW TO WAIT FOR THIS FETCH CALL
+      this.props.signIn(this.state); 
     } else if (this.props.serve === "Sign Up") {
       this.props.addUser(this.state);
     }
