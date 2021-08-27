@@ -17,14 +17,14 @@ class UserForm extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  handleSubmit = (e) => {
+  handleSubmit = async(e) => {
     e.preventDefault();
     if (this.props.serve === "Sign In") {
-      this.props.signIn(this.state); 
+      await this.props.signIn(this.state); 
     } else if (this.props.serve === "Sign Up") {
       this.props.addUser(this.state);
     }
-    this.props.history.push("/trips");
+    if (localStorage.getItem('userId')) this.props.history.push("/trips");
   };
 
   render() {

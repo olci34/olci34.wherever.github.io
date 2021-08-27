@@ -8,7 +8,7 @@ export default function signIn(sentUser) {
       method: "POST",
       body: JSON.stringify({ user: sentUser }),
     };
-    fetch("https://wherever-api.herokuapp.com/signin", configUser)
+    return fetch("https://wherever-api.herokuapp.com/signin", configUser)
       .then((resp) => resp.json())
       .then((receivedUser) => {
         if (receivedUser.errors) {
@@ -16,6 +16,6 @@ export default function signIn(sentUser) {
         } else {
           dispatch({ type: "SIGN_IN", payload: receivedUser });
         }
-      });
+      })
   };
 }
