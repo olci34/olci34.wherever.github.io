@@ -22,7 +22,7 @@ class UserForm extends Component {
     if (this.props.serve === "Sign In") {
       await this.props.signIn(this.state); 
     } else if (this.props.serve === "Sign Up") {
-      this.props.addUser(this.state);
+      await this.props.addUser(this.state);
     }
     if (localStorage.getItem('userId')) this.props.history.push("/trips");
   };

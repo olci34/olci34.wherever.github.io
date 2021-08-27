@@ -8,7 +8,7 @@ export default function addUser(user) {
       method: "POST",
       body: JSON.stringify({ user: user }),
     };
-    fetch("https://wherever-api.herokuapp.com/users", configUser)
+    return fetch("https://wherever-api.herokuapp.com/users", configUser)
       .then((resp) => resp.json())
       .then((user) => dispatch({ type: "ADD_USER", payload: user }));
   };

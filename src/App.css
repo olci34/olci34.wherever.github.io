@@ -9,6 +9,7 @@ body
 {
     color: white;
     height: 100vh;
+    font-size: large;
 }
 
 body {
@@ -28,7 +29,6 @@ canvas {
 
 #greeting {
     position: fixed;
-    
 }
 
 .user-form {
@@ -60,11 +60,18 @@ a {
 }
 
 .planet:hover {
-    text-shadow: 2px 2px 8px yellow;
+    box-shadow: 2px 2px 8px yellow;
 }
 
-li {
-    padding: 10px;
+.planet {
+    padding: 12px;
+    border-bottom: 2px solid white;
+    font-size: larger;
+    border-radius: 20px;
+}
+
+.planet a {
+    text-decoration: none;
 }
 
 label {
@@ -118,4 +125,16 @@ p {
 
 .greeting-option {
     display: block;
+    margin: 20px;
+    font-size: x-large;
+    padding: 12px;
+    background-color: transparent;
+    color: white;
+    border-color: white;
+    border-radius: 20px;
+}
+
+.greeting-option:hover {
+    background-color: white;
+    color: black;
 }
