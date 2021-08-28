@@ -69,7 +69,12 @@ class TripForm extends Component {
     return (
       <div className="trip-form">
         <form onSubmit={this.handleSubmit}>
+          <label><strong>Select Date:</strong></label>
+          <br/>
           <input type="date" id="start" name="trip-start" />
+          <br/><br/>
+          <label><strong>Select Planet(s):</strong></label>
+          <br/>
           {this.state.planets.map((p) => (
             <label key={p.id}>
               <input

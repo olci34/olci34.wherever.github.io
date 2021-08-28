@@ -24,35 +24,53 @@ canvas {
 .app {
     position:fixed;
     top: 10%;
-    left: 5%;
 }
 
 #greeting {
     position: fixed;
+    left: 5%;
+    top: 20%;
 }
 
 .user-form {
     position: fixed;
-    padding-top: 60px;
-    right: 20%;
+    right: 10%;
+    top: 20%;
+    font-size: large;      
+}
+
+.user-form input {
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 12px;
 }
 
 #navbar {
+    height: 36px;
+    padding: 10px;
     position: fixed;
-    width: 90%;
+    width: 100%;
     text-align: center;
     top: 3%;
-    left: 5%;
+    font-size: 26px;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.185),rgba(0, 0, 0, 0.267));
+    border-radius: 20px;
 }
 
 #navbar a{
-    padding-left: 10px;
+    padding: 12px;
+    border-radius: 20px;
+}
+
+#navbar a:hover {
+    background-image: radial-gradient(black,#52b788);
 }
 
 #trips-div {
     border-radius: 20px;
     position: fixed;
     top: 30%;
+    left: 10%;
 }
 
 #trips-div h2 {
@@ -76,17 +94,31 @@ canvas {
 }
 
 .trip {
+    position: fixed;
     border: 2px dotted white;
     border-radius: 20px;
+    top: 20%;
+    left: 10%;
 }
 
 .trip h3, h4 {
     margin: 20px;
 }
 
+.trip-form {
+    position: fixed;
+    left: 10%;
+    top: 30%;
+}
 a {
     color: white;
     text-decoration: none;
+}
+
+.planets-list {
+    position: fixed;
+    left: 10%;
+    top: 15%;
 }
 
 .planet:hover {
@@ -124,10 +156,6 @@ p {
     width: 100px;
 }
 
-.planets-list {
-    position: fixed;
-    top: 15%;
-}
 .zoomed-planet h1{
     position: fixed;
     left: 10%;
@@ -161,6 +189,7 @@ p {
 .greeting-option {
     display: block;
     margin: 20px;
+    margin-left: 0;
     font-size: x-large;
     padding: 12px;
     background-color: transparent;
@@ -187,7 +216,6 @@ p {
 
 
 .submit-button, #delete-trip-button, #edit-trip-button, #new-trip-button {
-    margin: 12px;
     font-size: large;
     background-color: rgba(0, 0, 0, 0.226);
     color: white;
@@ -195,6 +223,10 @@ p {
     margin-top: 8px;
     border-color: white;
     border-radius: 20px;
+}
+
+#new-trip-button {
+    width: 100%;
 }
 
 .submit-button:hover, #delete-trip-button:hover, #edit-trip-button:hover, #new-trip-button:hover {

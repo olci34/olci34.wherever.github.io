@@ -33,7 +33,7 @@ class UserForm extends Component {
         <h1>{this.props.serve}</h1>
         <form onSubmit={this.handleSubmit}>
           <br/>
-          <label>Name:</label>
+          <label>Username:</label>
           <br/>
           <input
             type="text"
