@@ -4,16 +4,17 @@ import { Link } from "react-router-dom";
 
 function Trips(props) {
   return (
-    <div className="trips-list">
-      <ul>
+    <div id="trips-div">
+      <h2>Reserved Trips</h2>
+      <ol>
         {props.trips.map((t) => (
-          <li key={t.id}>
+          <li key={t.id} className="trips">
             <Link to={`/trips/${t.id}`}>
-              Destionation: {t.planets.map((p) => p.name).join(", ")}
+              Destionation(s): {t.planets.map((p) => p.name).join(", ")}
             </Link>
           </li>
         ))}
-      </ul>
+      </ol>
       <button
         id="new-trip-button"
         onClick={() => props.history.push("/trips/new")}

@@ -49,25 +49,58 @@ canvas {
     padding-left: 10px;
 }
 
-.trips-list {
+#trips-div {
+    border-radius: 20px;
     position: fixed;
     top: 30%;
+}
+
+#trips-div h2 {
     text-align: center;
+    border-bottom: 2px solid white;
+}
+
+.trips {
+    background-image: linear-gradient(#00081450,#76c89377,#00081450);
+    margin: 20px;
+    padding: 20px;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    border-radius: 20px;
+    font-weight: 700;
+}
+
+.trips:hover {
+    background-image: radial-gradient(#000814,#168aad);
+    box-shadow: 0 0 10px white;
+}
+
+.trip {
+    border: 2px dotted white;
+    border-radius: 20px;
+}
+
+.trip h3, h4 {
+    margin: 20px;
 }
 
 a {
     color: white;
+    text-decoration: none;
 }
 
 .planet:hover {
-    box-shadow: 2px 2px 8px yellow;
+    box-shadow: 0 0 8px white;
+    background-image: radial-gradient(#000814,#168aad)
 }
 
 .planet {
+    list-style-type: none;
     padding: 12px;
     border-bottom: 2px solid white;
     font-size: larger;
     border-radius: 20px;
+    margin: 12px;
 }
 
 .planet a {
@@ -93,7 +126,7 @@ p {
 
 .planets-list {
     position: fixed;
-    top: 25%;
+    top: 15%;
 }
 .zoomed-planet h1{
     position: fixed;
@@ -102,6 +135,7 @@ p {
     padding: 15px;
     background-color: rgba(0, 0, 0, 0.767);
     border-radius: 20px;
+    border: 2px dotted white;
 }
 
 .zoomed-planet p {
@@ -112,6 +146,7 @@ p {
     width: 25%;
     background-color: rgba(0, 0, 0, 0.767);
     border-radius: 20px;
+    border: 2px dotted white;
 }
 
 .hidden {
@@ -135,6 +170,34 @@ p {
 }
 
 .greeting-option:hover {
-    background-color: white;
-    color: black;
+    box-shadow: 0 0 8px white;
+}
+
+#signin:hover {
+    background-image: radial-gradient(#000814,#ddbea9);
+}
+
+#signup:hover {
+    background-image: radial-gradient(#000814,#52b788);
+}
+
+#planets:hover {
+    background-image: radial-gradient(#000814,#168aad);
+}
+
+
+.submit-button, #delete-trip-button, #edit-trip-button, #new-trip-button {
+    margin: 12px;
+    font-size: large;
+    background-color: rgba(0, 0, 0, 0.226);
+    color: white;
+    padding: 12px;
+    margin-top: 8px;
+    border-color: white;
+    border-radius: 20px;
+}
+
+.submit-button:hover, #delete-trip-button:hover, #edit-trip-button:hover, #new-trip-button:hover {
+    background-image: radial-gradient(#000814,white);
+    box-shadow: 0 0 8px white;
 }

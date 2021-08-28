@@ -31,6 +31,7 @@ export default function NavBar(props) {
     return (
       <div id='navbar'>
         <Link to="/wherever">Home</Link>
+        <Link to="/planets">Planets</Link>
       </div>
     )
   }

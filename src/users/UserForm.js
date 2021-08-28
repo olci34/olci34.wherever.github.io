@@ -46,7 +46,7 @@ class UserForm extends Component {
           <br/>
           <input type="password" onChange={this.handleChange} name="password" />
           <br /><br/>
-          <input type="submit" value={this.props.serve} />
+          <input type="submit" className="submit-button" value={this.props.serve} />
         </form>
       </div>
     );

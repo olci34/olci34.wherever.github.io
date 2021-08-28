@@ -82,7 +82,7 @@ class TripForm extends Component {
               {p.name}
             </label>
           ))}
-          <input type="submit" value="Let's Go!" />
+          <input type="submit" className='submit-button' value="Let's Go!" />
         </form>
       </div>
     );
