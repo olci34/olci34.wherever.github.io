@@ -37,21 +37,23 @@ class TripForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    const ticketPasscode = `${Math.floor(Math.random() * (10**8))}`
     const visitingPlanetIds = this.state.planets
       .filter((p) => p.checked === true)
       .map((p) => p.id);
     if (this.props.trip === undefined) {
       this.props.postTrip({
-        departure: e.target.children[0].value,
+        departure: e.target.children[2].value,
         user_id: this.props.user.id,
         planet_ids: visitingPlanetIds,
+        ticket_attributes: {passcode: ticketPasscode}
       });
       this.props.history.push("/trips");
     } else if (!!this.props.trip) {
       this.props.editTrip({
         ...this.props.trip,
         planet_ids: visitingPlanetIds,
-        departure: e.target.children[0].value,
+        departure: e.target.children[2].value,
       });
       this.props.history.push(`/trips/${this.props.trip.id}`);
     }
