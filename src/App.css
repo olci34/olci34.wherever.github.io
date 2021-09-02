@@ -236,6 +236,7 @@ p {
 
 #spinner {
     position: fixed;
+    text-align: center;
     top: 50%;
     left: 50%;
 }

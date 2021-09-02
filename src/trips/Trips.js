@@ -1,13 +1,16 @@
-import { connect } from "react-redux";
-import { withRouter } from "react-router";
-import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Link, useHistory } from "react-router-dom";
 
-function Trips(props) {
+function Trips() {
+
+  const history = useHistory()
+  const trips = useSelector(state => state.trips)
+
   return (
     <div id="trips-div">
       <h2>Reserved Trips</h2>
       <ol>
-        {props.trips.map((t) => (
+        {trips.map((t) => (
           <li key={t.id} className="trips">
             <Link to={`/trips/${t.id}`}>
               Destionation(s): {t.planets.map((p) => p.name).join(", ")}
@@ -17,18 +20,12 @@ function Trips(props) {
       </ol>
       <button
         id="new-trip-button"
-        onClick={() => props.history.push("/trips/new")}
-      >
+        onClick={() => history.push("/trips/new")}
+        >
         New Trip
       </button>
     </div>
   );
 }
 
-const mapStateToProps = (state) => {
-  // could be done with useSelector() hook
-  return {
-    trips: [...state.trips],
-  };
-};
-export default withRouter(connect(mapStateToProps)(Trips));
+export default Trips;

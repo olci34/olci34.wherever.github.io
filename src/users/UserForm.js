@@ -3,32 +3,41 @@ import { connect } from "react-redux";
 import addUser from "../actions/addUser";
 import { withRouter } from "react-router-dom";
 import signIn from "../actions/signIn";
+import Loader from "../Loader";
 
 class UserForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
-      password: "",
+      user: {name: "",password: ""},
+      loader: false
     };
   }
 
   handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
+    const user = this.state.user
+    user[e.target.name] = e.target.value
+    this.setState({...this.state, user: user});
   };
 
   handleSubmit = async(e) => {
     e.preventDefault();
+    this.setState({...this.state, loader: true});
     if (this.props.serve === "Sign In") {
-      await this.props.signIn(this.state); 
+      await this.props.signIn(this.state.user); 
     } else if (this.props.serve === "Sign Up") {
-      await this.props.addUser(this.state);
+      await this.props.addUser(this.state.user);
     }
-    if (localStorage.getItem('userId')) this.props.history.push("/trips");
+    if (localStorage.getItem('userId')) {
+      this.setState({...this.state, loader: false})
+      this.props.history.push("/trips")
+    };
   };
 
   render() {
     return (
+      <>
+      <Loader loader={this.state.loader}/>
       <div className="user-form">
         <h1>{this.props.serve}</h1>
         <form onSubmit={this.handleSubmit}>
@@ -49,6 +58,7 @@ class UserForm extends Component {
           <input type="submit" className="submit-button" value={this.props.serve} />
         </form>
       </div>
+      </>
     );
   }
 }
