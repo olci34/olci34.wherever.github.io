@@ -233,3 +233,9 @@ p {
     background-image: radial-gradient(#000814,white);
     box-shadow: 0 0 8px white;
 }
+
+#spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+}
