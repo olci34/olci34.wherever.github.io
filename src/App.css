@@ -105,6 +105,10 @@ canvas {
     margin: 20px;
 }
 
+#ticket {
+ margin: 20px;   
+}
+
 .trip-form {
     position: fixed;
     left: 10%;

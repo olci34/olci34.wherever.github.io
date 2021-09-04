@@ -29,8 +29,8 @@ export default function Trip() {
           >
             Change Trip
           </button>
+          <Ticket ticket={trip.ticket} />
         </div>
-      <Ticket ticket={trip.ticket} />
       </Route>
       <Route exact path="/trips/:id/edit">
         <TripForm trip={trip} />
