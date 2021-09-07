@@ -8,7 +8,7 @@ export default function signIn(sentUser) {
       method: "POST",
       body: JSON.stringify({ user: sentUser }),
     };
-    return fetch("https://wherever-api.herokuapp.com/signin", configUser)
+    return fetch("http://localhost:3001/signin", configUser)
       .then((resp) => resp.json())
       .then((receivedUser) => {
         if (receivedUser.errors) {
