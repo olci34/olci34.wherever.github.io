@@ -13,6 +13,9 @@ export default function Trip() {
     dispatch(cancelTrip(trip));
     history.push("/trips");
   };
+  const handleTicketDisplay = (e) => {
+    history.push(`/tickets/${trip.ticket.passcode}`)
+  }
 
   return (
     <Switch>
@@ -29,7 +32,7 @@ export default function Trip() {
           >
             Change Trip
           </button>
-          <button id="display-ticket-button" onClick={() => console.log("display ticket")}>Display Ticket</button>
+          <button id="display-ticket-button" onClick={handleTicketDisplay}>Display Ticket</button>
         </div>
       </Route>
       <Route exact path="/trips/:id/edit">

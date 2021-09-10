@@ -19,6 +19,7 @@ import Neptune from "./THREE/Neptune";
 import Pluto from "./THREE/Pluto";
 import { useSelector } from "react-redux";
 import ZoomIn from "./THREE/ZoomIn";
+import Ticket from "./tickets/Ticket";
 
 function App() {
   const positions = useSelector((state) => state.zoomInPositions);
@@ -67,6 +68,9 @@ function App() {
           </Route>
           <Route path="/planets">
             <PlanetsContainer />
+          </Route>
+          <Route path="/tickets/:passcode">
+            <Ticket />
           </Route>
         </Switch>
       </div>

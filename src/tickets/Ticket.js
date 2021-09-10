@@ -1,15 +1,19 @@
 import TicketQR from "./TicketQR"
 import { useEffect } from "react"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import fetchTicket from "../actions/fetchTicket"
-export default function Ticket(props) {
+import { useParams } from "react-router-dom"
+
+export default function Ticket() {
     const dispatch = useDispatch()
-    useEffect(() => dispatch(fetchTicket(props.ticket.passcode)))
+    const { passcode } = useParams()
+    const trips = useSelector(state => state.trips)
+    useEffect(() => trips ? trips.find(t => t.ticket.passcode === passcode) : dispatch(fetchTicket(passcode)))
 
     return (
         <div id='ticket'>
-            <h2>Ticket Number: {props.ticket.passcode}</h2>
-            <TicketQR ticketNo= {props.ticket.passcode} />
+            <h2>Ticket Number: {passcode}</h2>
+            <TicketQR ticketNo={passcode} />
         </div>
     )
 }
