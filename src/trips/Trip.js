@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Route, Switch, useHistory, useParams } from "react-router-dom";
 import cancelTrip from "../actions/cancelTrip";
 import TripForm from "./TripForm";
-import Ticket from "../tickets/Ticket";
+
 export default function Trip() {
   const dispatch = useDispatch();
   const trips = useSelector((state) => state.trips); // WHEN /trips/:id PAGE IS REFRESHED, ERROR OCCURS
@@ -29,7 +29,7 @@ export default function Trip() {
           >
             Change Trip
           </button>
-          <Ticket ticket={trip.ticket} />
+          <button id="display-ticket-button" onClick={() => console.log("display ticket")}>Display Ticket</button>
         </div>
       </Route>
       <Route exact path="/trips/:id/edit">

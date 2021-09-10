@@ -10,7 +10,7 @@ export default function TicketQR(props) {
 function generateQR(tixNo) {
     let baseURL = "http://api.qrserver.com/v1/create-qr-code/?data="
     let size = "200x200"
-    let data = `http://localhost:3001/tickets/${tixNo}`
+    let data = `http://localhost:3000/tickets/${tixNo}`
     let url = baseURL + `${data}` + `&size=${size}`
     return url
 }
