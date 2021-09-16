@@ -99,10 +99,7 @@ canvas {
     border-radius: 20px;
     top: 20%;
     left: 10%;
-}
-
-.trip h3, h4 {
-    margin: 20px;
+    padding: 20px;
 }
 
 #ticket {
@@ -224,9 +221,13 @@ p {
     background-color: rgba(0, 0, 0, 0.226);
     color: white;
     padding: 12px;
-    margin-top: 8px;
+    margin-top: 18px;
     border-color: white;
     border-radius: 20px;
+}
+
+#edit-trip-button {
+    margin-right: 20px;
 }
 
 #new-trip-button {
@@ -243,4 +244,16 @@ p {
     text-align: center;
     top: 50%;
     left: 50%;
+}
+
+#display-ticket-button {
+    display: block;
+    font-size: medium;
+    background-color: rgba(56, 198, 223, 0.582);
+    color: white;
+    padding: 8px;
+    margin-top: 12px;
+    border-color: white;
+    border-radius: 20px;
+    width: 100%;
 }

@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Route, Switch, useHistory, useParams } from "react-router-dom";
 import cancelTrip from "../actions/cancelTrip";
-import TicketQR from "../tickets/TicketQR";
 import TripForm from "./TripForm";
 
 export default function Trip() {
@@ -24,18 +23,17 @@ export default function Trip() {
         <div className="trip">
           <h3> Planets: {trip.planets.map((p) => p.name).join(", ")} </h3>
           <h4> Departure Date: {trip.departure}</h4>
-          <button id="delete-trip-button" onClick={handleCancelTrip}>
-            Cancel Trip
-          </button>
           <button
             id="edit-trip-button"
             onClick={() => history.push(`/trips/${trip.id}/edit`)}
           >
             Change Trip
           </button>
+          <button id="delete-trip-button" onClick={handleCancelTrip}>
+            Cancel Trip
+          </button>
           <button id="display-ticket-button" onClick={handleTicketDisplay}>Display Ticket</button>
         </div>
-        <TicketQR ticketNo={trip.ticket.passcode}/>
       </Route>
       <Route exact path="/trips/:id/edit">
         <TripForm trip={trip} />

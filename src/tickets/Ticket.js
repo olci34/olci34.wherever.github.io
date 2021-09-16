@@ -1,31 +1,44 @@
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import { useParams } from "react-router-dom"
+import NavBar from "../NavBar"
+import TicketQR from "./TicketQR"
 
 export default function Ticket() {
     const { passcode } = useParams()
-    const trips = useSelector(state => state.trips)
-    let [ticket, setTicket] = useState({passcode: ''})
+    let [ticket, setTicket] = useState({passcode: '', trip: {departure: '' ,planets: [] }})
     useEffect(() => {
         const lookTicket = async () => {
-            if (trips.length) {
-                ticket = trips.find(t => t.passcode === passcode)
-            } else if (!ticket.passcode) {
-                ticket = await fetchTicket(passcode)
-                console.log(ticket)
-                setTicket(ticket)
+            let t;
+            if (!ticket.passcode) {
+                t = await fetchTicket(passcode)
+                setTicket(t)
             }
         }
         lookTicket()
         },[ticket])
 
     return (
-        <div id='ticket'>
-            <h2 >Ticket Number: {ticket.passcode} </h2>
-        </div>
+        <>
+            <NavBar signedIn={localStorage.getItem('userId')} />
+            <div id='ticket'>
+                <h2 >Ticket Number: {ticket.passcode} </h2>
+                <h3 >Destinations: {convertPlanetsToString(ticket.trip.planets)}</h3>
+                <h3 >Departure Date: {ticket.trip.departure} </h3>
+                <TicketQR ticketNo={ticket.passcode}/>
+            </div>
+        </>
     )
 }
 
 function fetchTicket(passcode) {
     return fetch(`http://localhost:3001/tickets/${passcode}`).then(resp => resp.json())
+}
+
+function convertPlanetsToString(planets) {
+    let res = ""
+    for (let i in planets) {
+        res += `${planets[i].name} `
+    }
+    return res
 }
