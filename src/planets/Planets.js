@@ -22,7 +22,7 @@ function Planets() {
       {planets.map((p) => (
         <li key={p.id} className="planet">
           <Link
-            to={`/planets/${p.id}`}
+            to={`/planets/${p.name}`}
             id={p.name}
             name={p.position}
             onClick={handleClick}
