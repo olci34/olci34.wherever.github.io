@@ -8,7 +8,7 @@ export default function postTrip(itenary) {
       method: "POST",
       body: JSON.stringify({ trip: itenary }),
     };
-    fetch("http://localhost:3001/trips", configTrip)
+    fetch("https://wherever-api.herokuapp.com/trips", configTrip)
       .then((resp) => resp.json())
       .then((trip) => {
         dispatch({ type: "POST_TRIP", payload: trip });

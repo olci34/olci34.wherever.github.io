@@ -1,6 +1,6 @@
 export default function fetchTrips() {
   return (dispatch) => {
-    fetch("http://localhost:3001/trips")
+    fetch("https://wherever-api.herokuapp.com/trips")
       .then((resp) => resp.json())
       .then((trips) => dispatch({ type: "FETCH_TRIPS", payload: trips }));
   };
