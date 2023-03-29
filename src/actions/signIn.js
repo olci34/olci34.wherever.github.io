@@ -1,3 +1,5 @@
+import { HEROKU_URL } from "../constants/AppUrlConstants";
+
 export default function signIn(sentUser) {
   return (dispatch) => {
     const configUser = {
@@ -8,7 +10,7 @@ export default function signIn(sentUser) {
       method: "POST",
       body: JSON.stringify({ user: sentUser }),
     };
-    return fetch("https://wherever-api.herokuapp.com/signin", configUser)
+    return fetch(`${HEROKU_URL}/signin`, configUser)
       .then((resp) => resp.json())
       .then((receivedUser) => {
         if (receivedUser.errors) {

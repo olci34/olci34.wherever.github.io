@@ -1,6 +1,8 @@
+import { HEROKU_URL } from "../constants/AppUrlConstants";
+
 export default function fetchPlanets() {
   return (dispatch) => {
-    fetch("https://wherever-api.herokuapp.com/planets")
+    fetch(`${HEROKU_URL}/planets`)
       .then((resp) => resp.json())
       .then((planets) => dispatch({ type: "FETCH_PLANETS", payload: planets }));
   };

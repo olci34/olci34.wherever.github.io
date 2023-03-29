@@ -1,3 +1,5 @@
+import { HEROKU_URL } from "../constants/AppUrlConstants";
+
 export default function postTrip(itenary) {
   return (dispatch) => {
     const configTrip = {
@@ -8,7 +10,7 @@ export default function postTrip(itenary) {
       method: "POST",
       body: JSON.stringify({ trip: itenary }),
     };
-    fetch("https://wherever-api.herokuapp.com/trips", configTrip)
+    fetch(`${HEROKU_URL}/trips`, configTrip)
       .then((resp) => resp.json())
       .then((trip) => {
         dispatch({ type: "POST_TRIP", payload: trip });

@@ -1,3 +1,5 @@
+import { HEROKU_URL } from "../constants/AppUrlConstants";
+
 export default function cancelTrip(trip) {
   return (dispatch) => {
     const configTrip = {
@@ -7,7 +9,7 @@ export default function cancelTrip(trip) {
       },
       method: "DELETE",
     };
-    fetch(`https://wherever-api.herokuapp.com/trips/${trip.id}`, configTrip)
+    fetch(`${HEROKU_URL}/trips/${trip.id}`, configTrip)
       .then((resp) => resp.json())
       .then((trip) => dispatch({ type: "CANCEL_TRIP", payload: trip.id }));
   };
