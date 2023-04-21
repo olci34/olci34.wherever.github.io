@@ -1,3 +1,5 @@
+import { HEROKU_URL } from "../constants/AppUrlConstants"
+
 export default function TicketQR(props) {
     let imgQR = generateQR(props.ticketNo)
     return (
@@ -10,7 +12,7 @@ export default function TicketQR(props) {
 function generateQR(tixNo) {
     let baseURL = "http://api.qrserver.com/v1/create-qr-code/?data="
     let size = "200x200"
-    let data = `http://localhost:3000/tickets/${tixNo}`
+    let data = `${HEROKU_URL}/tickets/${tixNo}`
     let url = `${baseURL}${data}&size=${size}`
     return url
 }
