@@ -52,7 +52,7 @@ function App() {
       <Loader />
       <div className="app">
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/wherever">
             <Greeting />
           </Route>
           <Route path="/signup">
