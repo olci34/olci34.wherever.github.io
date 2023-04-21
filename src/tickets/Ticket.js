@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import NavBar from "../NavBar"
 import TicketQR from "./TicketQR"
+import { HEROKU_URL } from "../constants/AppUrlConstants"
 
 export default function Ticket() {
     const { passcode } = useParams()
@@ -31,7 +32,7 @@ export default function Ticket() {
 }
 
 function fetchTicket(passcode) {
-    return fetch(`http://localhost:3001/tickets/${passcode}`).then(resp => resp.json())
+    return fetch(`${HEROKU_URL}/tickets/${passcode}`).then(resp => resp.json())
 }
 
 function convertPlanetsToString(planets) {
